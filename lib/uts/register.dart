@@ -83,7 +83,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 24),
 
-              // Input fields
+            
               TextField(
                 controller: nameController,
                 decoration: InputDecoration(
@@ -159,7 +159,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 24),
 
-              // Tombol daftar
+             
               ElevatedButton(
                 onPressed: _register,
                 style: ElevatedButton.styleFrom(
