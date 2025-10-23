@@ -11,6 +11,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   bool _obscurePassword = true;
+  bool _keepLoggedIn = false;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
 
               const SizedBox(height: 40),
 
-              // Judul Sign In
+              
               const Text(
                 "Sign In",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
@@ -60,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
 
               const SizedBox(height: 24),
 
-            
+              // Email
               TextField(
                 controller: emailController,
                 keyboardType: TextInputType.emailAddress,
@@ -75,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
 
               const SizedBox(height: 16),
 
-              // Password
+              
               TextField(
                 controller: passwordController,
                 obscureText: _obscurePassword,
@@ -100,32 +101,40 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
 
-              const SizedBox(height: 16),
+              const SizedBox(height: 8),
 
               
               Row(
                 children: [
                   Checkbox(
-                    value: false,
-                    onChanged: (value) {},
+                    value: _keepLoggedIn,
+                    onChanged: (value) {
+                      setState(() {
+                        _keepLoggedIn = value!;
+                      });
+                    },
                   ),
                   const Text("Keep me logged in"),
                 ],
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 16),
 
-            
+              // Tombol Login
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // logika login di sini
+                  },
                   style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueAccent,
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    backgroundColor: Colors.blueAccent,
+                    shadowColor: Colors.purpleAccent,
+                    elevation: 5,
                   ),
                   child: const Text(
                     "Login",
@@ -134,27 +143,26 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 16),
 
-            
-              Center(
-                child: GestureDetector(
-                  onTap: () {},
-                  child: const Text.rich(
-                    TextSpan(
-                      text: "Belum punya akun? ",
-                      children: [
-                        TextSpan(
-                          text: "Daftar di sini",
-                          style: TextStyle(
-                            color: Colors.blueAccent,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
+              
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("Belum punya akun? "),
+                  GestureDetector(
+                    onTap: () {
+                    
+                    },
+                    child: const Text(
+                      "Daftar di sini",
+                      style: TextStyle(
+                        color: Colors.blueAccent,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
             ],
           ),
