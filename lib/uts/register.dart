@@ -89,7 +89,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 12),
               TextField(
-                controller: addressController,
+                controller: adressController,
                 decoration: InputDecoration(
                   labelText: "Alamat",
                   border: OutlineInputBorder(
@@ -107,7 +107,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 12),
               TextField(
-                controller: passwordController,
+                controller: PasswordController,
                 obscureText: _obscurePassword,
                 decoration: InputDecoration(
                   labelText: "Password",
@@ -166,7 +166,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
               ),
-            ],
+            ],gi
           ),
         ),
       ),
