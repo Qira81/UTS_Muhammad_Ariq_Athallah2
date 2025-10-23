@@ -57,12 +57,12 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  gambar:
+  assets:
       - gambar/Logo.png
-      - gambar/001.png
-      - gambar/002.png
-      - gambar/003.png
-      - gambar/004.png
+      - gambar/001.jpg
+      - gambar/002.jpg
+      - gambar/003.jpg
+      - gambar/004.jpg
       - gambar/administrator 1.png
       - gambar/calendar-range.png
       - gambar/cashier 1.png
