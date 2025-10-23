@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
+import 'package:uts/uts/login.dart';git
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -13,7 +13,9 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController addressController = TextEditingController();
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
+
   bool _obscurePassword = true;
   bool _obscureConfirm = true;
 
@@ -57,7 +59,7 @@ class _RegisterPageState extends State<RegisterPage> {
               Center(
                 child: Column(
                   children: [
-                    Image.asset('assets/Logo.png', height: 100),
+                    Image.asset('ASSET/Logo.png', height: 100),
                     const SizedBox(height: 10),
                     const Text(
                       "LKS MART",
@@ -71,10 +73,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               const SizedBox(height: 20),
-              const Text("Daftar",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-              const Text("Silahkan isi data pribadi Anda",
-                  style: TextStyle(color: Colors.grey)),
+              const Text(
+                "Daftar",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              const Text(
+                "Silahkan isi data pribadi Anda",
+                style: TextStyle(color: Colors.grey),
+              ),
               const SizedBox(height: 24),
 
               // Input fields
@@ -83,70 +89,110 @@ class _RegisterPageState extends State<RegisterPage> {
                 decoration: InputDecoration(
                   labelText: "Nama Lengkap",
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12)),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
               ),
               const SizedBox(height: 12),
+
               TextField(
                 controller: addressController,
                 decoration: InputDecoration(
                   labelText: "Alamat",
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12)),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
               ),
               const SizedBox(height: 12),
+
               TextField(
                 controller: usernameController,
                 decoration: InputDecoration(
                   labelText: "Username",
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12)),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
               ),
               const SizedBox(height: 12),
+
               TextField(
                 controller: passwordController,
                 obscureText: _obscurePassword,
                 decoration: InputDecoration(
                   labelText: "Password",
                   suffixIcon: IconButton(
-                    icon: Icon(_obscurePassword
-                        ? Icons.visibility_off
-                        : Icons.visibility),
+                    icon: Icon(
+                      _obscurePassword
+                          ? Icons.visibility_off
+                          : Icons.visibility,
+                    ),
                     onPressed: () =>
                         setState(() => _obscurePassword = !_obscurePassword),
                   ),
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12)),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
               ),
               const SizedBox(height: 12),
+
               TextField(
                 controller: confirmPasswordController,
                 obscureText: _obscureConfirm,
                 decoration: InputDecoration(
                   labelText: "Konfirmasi Password",
                   suffixIcon: IconButton(
-                    icon: Icon(_obscureConfirm
-                        ? Icons.visibility_off
-                        : Icons.visibility),
+                    icon: Icon(
+                      _obscureConfirm
+                          ? Icons.visibility_off
+                          : Icons.visibility,
+                    ),
                     onPressed: () =>
                         setState(() => _obscureConfirm = !_obscureConfirm),
                   ),
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12)),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
               ),
               const SizedBox(height: 24),
+
+              // Tombol daftar
               ElevatedButton(
                 onPressed: _register,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueAccent,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12)),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                   minimumSize: const Size(double.infinity, 50),
                 ),
                 child: const Text("Daftar"),
               ),
-             
+
+              const SizedBox(height: 16),
+              Center(
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginPage(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    "Sudah punya akun? Login di sini",
+                    style: TextStyle(color: Colors.blueAccent),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
