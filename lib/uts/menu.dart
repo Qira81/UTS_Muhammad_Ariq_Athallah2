@@ -121,12 +121,35 @@ class MenuPage extends StatelessWidget {
                           ],
                         ),
                         SizedBox(height: 4),
-                        gi
+                        Text("${item['rating']}"),
+                        SizedBox(height: 6),
+                        
+                        Image.asset(
+                          'gambar/cashier 1.png',
+                          height: 25,
+                        ),
                       ],
                     ),
                   ),
                 );
               },
+            ),
+          ),
+        Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              border: Border(top: BorderSide(color: Colors.grey[300]!)),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  "Total Belanja : Rp.23.000",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.redAccent),
+                ),
+              ],
             ),
           ),
         ],
