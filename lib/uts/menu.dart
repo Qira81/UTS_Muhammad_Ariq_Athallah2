@@ -104,6 +104,26 @@ class MenuPage extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
+                  title: Text(
+                      item['deskripsi'],
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Text("Rp. ${item['harga']}"),
+                    trailing: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Image.asset('gambar/Tambah1.png', height: 20),
+                            const SizedBox(width: 4),
+                            Text(item['stok'].toString()),
+                          ],
+                        ),
+                        SizedBox(height: 4),
+                        gi
+                      ],
+                    ),
                   ),
                 );
               },

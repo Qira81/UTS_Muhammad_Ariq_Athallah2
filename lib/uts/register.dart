@@ -89,7 +89,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 12),
               TextField(
-                controller: adressController,
+                controller: addressController,
                 decoration: InputDecoration(
                   labelText: "Alamat",
                   border: OutlineInputBorder(
@@ -151,7 +151,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: const Text("Daftar"),
               ),
               const SizedBox(height: 16),
-              Center(,
+              Center(
                 child: GestureDetector(
                   onTap: () {
                     Navigator.pushReplacement(
