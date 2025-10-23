@@ -11,9 +11,9 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController nameController = TextEditingController();
-  final TextEditingController addressControler = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
   final TextEditingController usernameController = TextEditingController();
-  final TextEditingController passwordControler = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController = TextEditingController();
   bool _obscurePassword = true;
   bool _obscureConfirm = true;
@@ -107,7 +107,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 12),
               TextField(
-                controller: PasswordController,
+                controller: passwordController,
                 obscureText: _obscurePassword,
                 decoration: InputDecoration(
                   labelText: "Password",
@@ -166,7 +166,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
               ),
-            ],gi
+            ],
           ),
         ),
       ),
