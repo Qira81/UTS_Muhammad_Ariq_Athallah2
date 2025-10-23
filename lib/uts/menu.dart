@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Menu extends StatelessWidget {
-  const Menu({super.key});
+class MenuPage extends StatelessWidget {
+  const MenuPage({super.key});
 
   final List<Map<String, dynamic>> items = const [
     {
@@ -63,7 +63,6 @@ class Menu extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // Header Produk
           Container(
             width: double.infinity,
             color: Colors.blue[50],
@@ -81,6 +80,33 @@ class Menu extends StatelessWidget {
                 ),
                 Icon(Icons.search, color: Colors.grey),
               ],
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              padding: const EdgeInsets.all(8),
+              itemCount: items.length,
+              itemBuilder: (context, index) {
+                final item = items[index];
+                return Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  elevation: 2,
+                  margin: const EdgeInsets.symmetric(vertical: 6),
+                  child: ListTile(
+                    leading: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.asset(
+                        item['gambar'],
+                        width: 60,
+                        height: 60,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                );
+              },
             ),
           ),
         ],
